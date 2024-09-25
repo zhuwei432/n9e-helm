@@ -96,10 +96,9 @@ logLevel: info
 caSecretName: ""
 
 secretKey: "not-a-secure-key"
-
 nginx:
   image:
-    repository: docker.io/library/nginx
+    repository: harbor.jianmucloud.com:30003/n9e/nginx:stable-alpine
     tag: stable-alpine
   serviceAccountName: ""
   automountServiceAccountToken: false
@@ -122,7 +121,7 @@ database:
     serviceAccountName: ""
     automountServiceAccountToken: false
     image:
-      repository: docker.io/library/mysql
+      repository: harbor.jianmucloud.com:30003/n9e/mysql
       tag: 5.7
     username: "root"
     password: "1234"
@@ -152,7 +151,7 @@ redis:
     serviceAccountName: ""
     automountServiceAccountToken: false
     image:
-      repository: docker.io/library/redis
+      repository: harbor.jianmucloud.com:30003/n9e/redis
       tag: 6.2
     nodeSelector: {}
     tolerations: []
@@ -173,7 +172,7 @@ prometheus:
     serviceAccountName: ""
     automountServiceAccountToken: false
     image:
-      repository: docker.io/prom/prometheus
+      repository: harbor.jianmucloud.com:30003/n9e/prometheus
       tag: latest
     nodeSelector: {}
     tolerations: []
@@ -192,7 +191,7 @@ categraf:
     serviceAccountName: ""
     automountServiceAccountToken: false
     image:
-      repository: flashcatcloud/categraf
+      repository: harbor.jianmucloud.com:30003/n9e/categraf    
       tag: latest
     nodeSelector: {}
     tolerations: []
@@ -215,8 +214,8 @@ n9e:
     serviceAccountName: ""
     automountServiceAccountToken: false
     image:
-      repository: flashcatcloud/nightingale
-      tag: 7.0.0-beta.14.3
+      repository: harbor.jianmucloud.com:30003/n9e/nightingale
+      tag: 7.0.0
     resources: {}
     #  requests:
     #    memory: 512Mi
